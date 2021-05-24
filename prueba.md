@@ -1,3 +1,4 @@
+
 Introduction
 ------------
 
@@ -15,6 +16,7 @@ steps: Number of steps taking in a 5-minute interval (missing values are coded a
 
 Loading and preprocessing the data
 ----------------------------------
+
 Unzip data to obtain a csv file.
 
 ``` r
@@ -35,6 +37,7 @@ activityDT <- data.table::fread(input = "data/activity.csv")
 
 What is mean total number of steps taken per day?
 -------------------------------------------------
+
 1.  Calculate the total number of steps taken per day
 
 ``` r
@@ -65,7 +68,7 @@ ggplot(Total_Steps, aes(x = steps)) +
 
     ## Warning: Removed 8 rows containing non-finite values (stat_bin).
 
-![] instructions_fig/Rplot1.png
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/5_Reproducible_Research/project1/%F0%9D%99%BF%F0%9D%99%B0%F0%9D%9F%B7_%F0%9D%9A%9D%F0%9D%9A%8E%F0%9D%9A%96%F0%9D%9A%99%F0%9D%9A%95%F0%9D%9A%8A%F0%9D%9A%9D%F0%9D%9A%8E_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
 1.  Calculate and report the mean and median of the total number of steps taken per day
 
@@ -87,7 +90,7 @@ IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("step
 ggplot(IntervalDT, aes(x = interval , y = steps)) + geom_line(color="blue", size=1) + labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
 ```
 
-![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/5_Reproducible_Research/project1/%F0%9D%99%BF%F0%9D%99%B0%F0%9D%9F%B7_%F0%9D%9A%9D%F0%9D%9A%8E%F0%9D%9A%96%F0%9D%9A%99%F0%9D%9A%95%F0%9D%9A%8A%F0%9D%9A%9D%F0%9D%9A%8E_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](https://github.com/mGalarnyk/datasciencecoursera/blob/master/5_Reproducible_Research/project1/%F0%9D%99%BF%F0%9D%99%B0%F0%9D%9F%B7_%F0%9D%9A%9D%F0%9D%9A%8E%F0%9D%9A%96%F0%9D%9A%99%F0%9D%9A%95%F0%9D%9A%8A%F0%9D%9A%9D%F0%9D%9A%8E_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 1.  Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -173,7 +176,7 @@ head(activityDT, 10)
     ##  1:    NA 2012-10-01        0      Monday            weekday
     ##  2:    NA 2012-10-01        5      Monday            weekday
     ##  3:    NA 2012-10-01       10      Monday            weekday
-##  4:    NA 2012-10-01       15      Monday            weekday
+    ##  4:    NA 2012-10-01       15      Monday            weekday
     ##  5:    NA 2012-10-01       20      Monday            weekday
     ##  6:    NA 2012-10-01       25      Monday            weekday
     ##  7:    NA 2012-10-01       30      Monday            weekday
