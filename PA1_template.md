@@ -4,7 +4,6 @@ author: "Juan Jose Rojo"
 date: "5/24/2021"
 output: 
   html_document:
-    keep_md: true
 ---
 
 ## Introduction
